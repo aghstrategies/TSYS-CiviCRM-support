@@ -47,8 +47,10 @@ This is the file path to use when installing the extension in the next step.
 Connect to the web server and navigate to the extension directory found previously.
 
 Ex: 
+~~
       ssh webmaster@website.com
       cd /srv/www/cayandemo/public_html/wp-content/uploads/civicrm/ext/
+~~
 
 * Download the extension file 
 
@@ -56,13 +58,16 @@ Use the latest version found on (https://github.com/aghstrategies/com.aghstrateg
 
 *The specific file path may change as the software is updated. Please check this link for the latest archive: https://github.com/aghstrategies/com.aghstrategies.tsys/archive and replace "v1.1.0.zip" with the latest stable version.
 
+~~
       sudo wget https://github.com/aghstrategies/com.aghstrategies.tsys/archive/v1.1.0.zip
+~~
 
 This will download the file "master.zip" to this directory which will need to be unzipped.
 
 * Unzip the extension file
-
+~~
       sudo unzip master.zip
+~~
 
 You are finished with the command line, so you can leave by typing 'exit'
 
