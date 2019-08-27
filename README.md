@@ -9,7 +9,9 @@ Make sure you have identified the specific website to use, and complete these st
 * Navigate to the CiviCRM dashboard
 * Check that cron is running and that the TSYS scheduled job is enabled
 
-[](/Screenshots/01-NavigateToCivi.png)
+![](/Screenshots/01-NavigateToCivi.png)
+
+https://github.com/aghstrategies/TSYS-CiviCRM-support/blob/Josh/Screenshots/01-NavigateToCivi.png
 
 # Install TSYS extension
 * Use the Civi menu Administer > System Settings > Directories to identify the extension directory.
