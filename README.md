@@ -47,10 +47,10 @@ This is the file path to use when installing the extension in the next step.
 Connect to the web server and navigate to the extension directory found previously.
 
 Ex: 
-~~
+~~~
       ssh webmaster@website.com
       cd /srv/www/cayandemo/public_html/wp-content/uploads/civicrm/ext/
-~~
+~~~
 
 * Download the extension file 
 
@@ -58,16 +58,16 @@ Use the latest version found on (https://github.com/aghstrategies/com.aghstrateg
 
 *The specific file path may change as the software is updated. Please check this link for the latest archive: https://github.com/aghstrategies/com.aghstrategies.tsys/archive and replace "v1.1.0.zip" with the latest stable version.
 
-~~
+~~~
       sudo wget https://github.com/aghstrategies/com.aghstrategies.tsys/archive/v1.1.0.zip
-~~
+~~~
 
 This will download the file "master.zip" to this directory which will need to be unzipped.
 
 * Unzip the extension file
-~~
+~~~
       sudo unzip master.zip
-~~
+~~~
 
 You are finished with the command line, so you can leave by typing 'exit'
 
@@ -121,6 +121,8 @@ Merchant Site ID:	This is provided by your Cayan representative
 Site URL:	https://cayan.accessaccountdetails.com/
 Recurring Payments URL: https://cayan.accessaccountdetails.com/
 
+![](/Screenshots/ConfigureDetails.png)
+
 ## Processor Details for Test Payments
 
 Repeat all the information above
@@ -132,39 +134,107 @@ Merchant Site ID:	This is provided by your Cayan representative (same as above)
 Site URL:	https://cayan.accessaccountdetails.com/
 Recurring Payments URL: https://cayan.accessaccountdetails.com/
 
+![](/Screenshots/ConfigureTest.png)
+
 Click Save
 
-## Using a Processor on a Civi page
+# Using a Processor on a web page
+Now that CiviCRM can talk to TSYS with a Payment Processor, we need to add that processor to a page to be able to take credit cards.
+
+## Adding to a contribution page
+
+First, find the contribution page you want to edit from the Civi menu Contributions > Manage Contribution Pages
+
+![](/Screenshots/NavigateContributions.png)
+
+On the right side of the listing, click the Configure Link and select Contribution Amounts
+
+![](/Screenshots/ConfigureContribution.png)
+
+Next to the Payment Processor field, you should see your new payment processor available. Check the box next to it and uncheck any others that may be selected already.
+
+![](/Screenshots/SelectCredit.png)
+
+Click the Save and Done button. This page will now be able to take credit card payments through TSYS.
+
+## Adding to an event registration page
+First, find the event you want to edit from the Civi menu Events > Manage Events
+
+On the right side of the listing, click the Configure Link and select Fees
+
+![](/Screenshots/EventFees.png)
+
+Next to the Payment Processor field, you should see your new payment processor available. Check the box next to it and uncheck any others that may be selected already.
+
+![](/Screenshots/CreditEvent.png)
+
+Click the Save and Done button. This page will now be able to take credit card payments through TSYS.
+
+# Completing a transaction from the backend
+Sometimes you will need to process transactions without the need for completing a web page form like a donation or event registration page. To administratively process payments from the back end you will begin by finding the contact record of the individual or organization making the transaction. Donations and Event Registrations are handled separately, so make sure you do not record an event registration fee as a donation.
+
+Identify and navigate to the target contact record.
+
+## Backend Contribution
+
+![](/Screenshots/BackendContribution.png)
+
+On the contact record select the Contributions tab, then click the "Submit Credit Card Contribution" button.
+
+Make sure that the name you used to set up the process (Credit Card in our example) is selected in the dropdown for Payment Processor. Enter the remaining required fields and click "Save" or "Save and New" to execute the transaction.
+
+## Backend Event Registration
+
+![](/Screenshots/BackendEvent.png)
+
+On the contact record select the Contributions tab, then click the "Submit Credit Card Contribution" button.
+
+Event - Select the name of the event from the first dropdown.
+Participant Role - Set this to "Attendee" unless there's a reason to change it.
+Ensure that the name you used to set up the process (Credit Card in our example) is selected in the dropdown for Payment Processor. 
+Enter the remaining required fields and click "Save" or "Save and New" to execute the transaction.
 
 
-Backend donation spits out rejection code
-Could be 
+# Cancelling a recurring contribution
+Recurring contributions are held on the contact record under the Contributions tab, in a sub-tab called Recurring Contributions.
 
-CiviCRM Scheduled Job that check for recurring contributions
+![](/Screenshots/CancelRecurring.png)
 
-How to cancel a recurring contribution
-Create and Cancel a recurring contribution
+Click the Cancel link on the right side of the recurring contribution to cancel future transactions.
 
-Example for each kind of transaction
+# Refunding a contribution
+Refunds to credit cards must be initiated through your TSYS interface. At this time refunds can not be initiated from CiviCRM.
+
+After you refund a transaction, you will need to record that refund in CiviCRM. Use the Civi menu Search > Find Contributions to enter contribution details that will allow you to click View on the contribution record. It should look something like this:
+
+![](/Screenshots/RefundContribution.png)
+
+Click the Edit button on the bottom of the record
+
+Change Contribution Status to Refunded, and make any other necessary edits and click Save
+
+![](/Screenshots/Refunded.png)
 
 # Troubleshooting
 
 ## "My recurring contributions are not going through, but regular contributions are working fine"
-  This is likely due to a problem with the scheduled job for TSYS in CiviCRM. Try running the job manually and then re-enabling it from the Scheduled Job's page. Get here from the Civi menu Administer > System Settings > Scheduled Jobs
+
+This is likely due to a problem with the scheduled job for TSYS in CiviCRM. Try running the job manually and then re-enabling it from the Scheduled Job's page. Get here from the Civi menu Administer > System Settings > Scheduled Jobs
+
+![](/Screenshots/ScheduledJobs.png)
+
 Find the job labeled "TSYS Payments Recurring Contributions (Daily)" and check the information there about the last time it was run and whether or not it is enabled.
+
 
 ### Mannually run the TSYS job
 Use the "more" link to select "Execute Now"
 This should run any scheduled payments, including any that have been queued up since the last run.
 
+![](/Screenshots/RunScheduledJob.png)
+
 ### Enable the TSYS job
-If the job runs successfully when executed manually, click the "more" link again and select "Enable" to allow the job to run automatically, once a day.
+If the job runs successfully when executed manually, click the "edit" link. 
+Check the "Is this Scheduled Job active?" box if it is not checked.
 
-
-
-![](/Screenshots/)
-![](/Screenshots/)
-![](/Screenshots/)
-![](/Screenshots/)
-![](/Screenshots/)
+![](/Screenshots/ActivateScheduledJob.png)
 
