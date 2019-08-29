@@ -248,8 +248,7 @@ The full suite of official documentation sets for CiviCRM can be found https://d
 
 These specific links are the most relevant places you may need to reference related to the TSYS integration.
 
-System Administrator's Guide to [CiviCRM Payment Processors](https://docs.civicrm.org/sysadmin/en/latest/setup/payment-processors/)
-
-System Administrator's Guide to [Custom Extensions](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/)
-The CiviCRM User Guide 
-
+* System Administrator's Guide to [Payment Processors](https://docs.civicrm.org/sysadmin/en/latest/setup/payment-processors/)
+* User's Guide to [Payment Processors](https://docs.civicrm.org/user/en/latest/contributions/payment-processors/)
+* System Administrator's Guide to [Extensions](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/)
+* User's Guide to [Extensions](https://docs.civicrm.org/user/en/latest/introduction/extensions/)
