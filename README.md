@@ -2,6 +2,11 @@
 
 Throughout this example we'll use a WordPress site. The installation process may differ slightly for each CMS, but should be relatively similar.
 
+You can use the companion [video walkthrough](TSYS_CiviCRM_InstallationWalkthrough.mp4) to see many of these steps narrated in action.
+
+This document illustrates the installation procedures at the time of development. These methods may change, so the best source for information on the installation of extensions in CiviCRM are the official documentation pages found here: https://docs.civicrm.org
+
+
 # Preparations
 
 Make sure you have identified the specific website to use, and complete these steps:
@@ -237,4 +242,14 @@ If the job runs successfully when executed manually, click the "edit" link.
 Check the "Is this Scheduled Job active?" box if it is not checked.
 
 ![](/Screenshots/ActivateScheduledJob.png)
+
+## Official Documentation Links
+The full suite of official documentation sets for CiviCRM can be found https://docs.civicrm.org
+
+These specific links are the most relevant places you may need to reference related to the TSYS integration.
+
+System Administrator's Guide to [CiviCRM Payment Processors](https://docs.civicrm.org/sysadmin/en/latest/setup/payment-processors/)
+
+System Administrator's Guide to [Custom Extensions](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/)
+The CiviCRM User Guide 
 
