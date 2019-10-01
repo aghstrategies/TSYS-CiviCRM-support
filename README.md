@@ -210,6 +210,18 @@ Click the Cancel link on the right side of the recurring contribution to cancel 
 # Refunding a contribution
 Refunds to credit cards must be initiated through your TSYS interface. At this time refunds can not be initiated from CiviCRM.
 
+## Refund the contribution through the Merchant Portal
+
+Log in to your TSYS Merchant Portal
+![](/Screenshots/MerchantPortalLogin.png)
+
+From the Dashboard, you can use the Quick Transaction Search to locate the transaction you need to refund.
+![](/Screenshots/MerchantPortalDashboard.png)
+
+Use the Virtual Terminal to find the Manual Refund link. Enter the transaction information and click "Submit Refund"
+![](/Screenshots/MerchantPortalRefund.png)
+
+## Record the refund in CiviCRM
 After you refund a transaction, you will need to record that refund in CiviCRM. Use the Civi menu Search > Find Contributions to enter contribution details that will allow you to click View on the contribution record. It should look something like this:
 
 ![](/Screenshots/RefundContribution.png)
