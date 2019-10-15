@@ -1,0 +1,54 @@
+#!/usr/bin/php
+
+<?php
+
+$DIR = __DIR__;
+
+if (empty($argv[1]) || !is_file("$DIR/submitted/{$argv[1]}.md")) {
+  print_r($argv);
+  print $DIR;
+  echo 'You must provide a file name from the "submitted" folder.' . PHP_EOL;
+  exit(1);
+}
+
+$partials = scandir("$DIR/partials");
+
+$text = file_get_contents("$DIR/submitted/{$argv[1]}.md");
+
+foreach ($partials as $partial) {
+  if (in_array($partial, array('.', '..'))) {
+    continue;
+  }
+  $text = str_replace("|||$partial|||", file_get_contents("$DIR/partials/$partial"), $text);
+}
+
+$searches = array(
+  '/###[ \t]*(.+)[ \t]*\|[ \t]*\[rightalign\][ \t]*(.+)[ \t]*/',
+  '/##[ \t]*(.+)[ \t]*\|[ \t]*\[rightalign\][ \t]*(.+)[ \t]*/',
+);
+
+$replacements = array(
+  '<div class="appendixheader"><h3>$1</h3> <div class="righthand">$2</div></div>',
+  '<div class="priceheader"><h2>$1</h2> <h2>$2</h2></div>',
+);
+
+$text = preg_replace($searches, $replacements, $text);
+
+file_put_contents("$DIR/submitted/.proposalgen-{$argv[1]}.md", $text);
+
+// Create HTML
+`pandoc -f markdown -s -t html -o "$DIR/submitted/.proposalgen-{$argv[1]}.html" "$DIR/submitted/.proposalgen-{$argv[1]}.md"`;
+
+// Make smart formatting
+`smartypants "$DIR/submitted/.proposalgen-{$argv[1]}.html" > "$DIR/submitted/.proposalgen-{$argv[1]}.smart.html"`;
+
+// Generate PDF
+`weasyprint "$DIR/submitted/.proposalgen-{$argv[1]}.smart.html" "$DIR/submitted/{$argv[1]}.pdf"`;
+
+// Clean up
+unlink("$DIR/submitted/.proposalgen-{$argv[1]}.html");
+unlink("$DIR/submitted/.proposalgen-{$argv[1]}.smart.html");
+unlink("$DIR/submitted/.proposalgen-{$argv[1]}.md");
+
+// Display PDF
+`/usr/bin/env xdg-open $DIR/submitted/"{$argv[1]}.pdf"`;

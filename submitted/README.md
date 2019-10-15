@@ -23,7 +23,7 @@ In Joomla, find the Extensions menu and select CiviCRM.
 Navigate to the System Status page using the top Civi menu Administer > Administration Console > System Status
 If there are any Errors, the installation process may not complete as expected. Contact a CiviCRM specialist before proceeding.
 
-![](/Screenshots/SystemStatus.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/SystemStatus.png)
 
 
 # Install TSYS extension
@@ -31,11 +31,11 @@ If there are any Errors, the installation process may not complete as expected. 
 ## Identify the Extensions directory
 
 Use the Civi menu Administer > System Settings > Directories to identify the extension directory.
-![](/Screenshots/Directories.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/Directories.png)
 
 The last field on this page is labeled "Extensions Directory". To get the full file path, click the ? symbol in the green text to find what path [civicrm.files] has. Add that together with any text afterwards to get the full file path.
 
-![](/Screenshots/DirectoryPath.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/DirectoryPath.png)
 
 Example:
 Extensions Directory [civicrm.files]/ext/
@@ -79,19 +79,19 @@ You are finished with the command line, so you can leave by typing 'exit'
 ## Switch to the web interface
 Switch back to the web browser to install the TSYS extension through CiviCRM's extension interface by using the Civi menu Administer > System Settings > Extensions
 
-![](/Screenshots/ExtensionPage.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ExtensionPage.png)
 
 * Click the Refresh button to display the TSYS extension
 
-![](/Screenshots/RefreshExtensions.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/RefreshExtensions.png)
 
 Click the Install link on the right of the TSYS lsiting and click Install again on the following page.
 
-![](/Screenshots/InstallExt.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/InstallExt.png)
 
 You'll be returned to the Extensions page, with TSYS Enabled
 
-![](/Screenshots/ExtEnabled.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ExtEnabled.png)
 
 # Configure a TSYS Payment Processor
 
@@ -99,7 +99,7 @@ Now that Civi has the capability of talking to TSYS, we need to configure a Civi
 
 * Use the Civi menu to navigate to Administer > System Settings > Payment Processors
 * Click the Add Payment Processor button
-![](/Screenshots/NavigateProcessors.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/NavigateProcessors.png)
 
 
 
@@ -116,7 +116,7 @@ Now that Civi has the capability of talking to TSYS, we need to configure a Civi
 |Is this Payment Processor the default?|check|If checked, any new contribution page or event created will assume credit card payments will be taken using this TSYS processor|
 |Accepted Credit Card Types| Check all: Visa, MasterCard, Amex, Discover ||
 
-![](/Screenshots/ConfigureProcessor.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ConfigureProcessor.png)
 
 ## Processor Details for Live Payments
 Merchant Name: This is provided by your Cayan representative
@@ -126,7 +126,7 @@ Merchant Site ID:	This is provided by your Cayan representative
 Site URL:	https://cayan.accessaccountdetails.com/
 Recurring Payments URL: https://cayan.accessaccountdetails.com/
 
-![](/Screenshots/ConfigureDetails.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ConfigureDetails.png)
 
 ## Processor Details for Test Payments
 
@@ -139,7 +139,7 @@ Merchant Site ID:	This is provided by your Cayan representative (same as above)
 Site URL:	https://cayan.accessaccountdetails.com/
 Recurring Payments URL: https://cayan.accessaccountdetails.com/
 
-![](/Screenshots/ConfigureTest.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ConfigureTest.png)
 
 Click Save
 
@@ -150,15 +150,15 @@ Now that CiviCRM can talk to TSYS with a Payment Processor, we need to add that 
 
 First, find the contribution page you want to edit from the Civi menu Contributions > Manage Contribution Pages
 
-![](/Screenshots/NavigateContributions.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/NavigateContributions.png)
 
 On the right side of the listing, click the Configure Link and select Contribution Amounts
 
-![](/Screenshots/ConfigureContribution.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ConfigureContribution.png)
 
 Next to the Payment Processor field, you should see your new payment processor available. Check the box next to it and uncheck any others that may be selected already.
 
-![](/Screenshots/SelectCredit.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/SelectCredit.png)
 
 Click the Save and Done button. This page will now be able to take credit card payments through TSYS.
 
@@ -167,11 +167,11 @@ First, find the event you want to edit from the Civi menu Events > Manage Events
 
 On the right side of the listing, click the Configure Link and select Fees
 
-![](/Screenshots/EventFees.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/EventFees.png)
 
 Next to the Payment Processor field, you should see your new payment processor available. Check the box next to it and uncheck any others that may be selected already.
 
-![](/Screenshots/CreditEvent.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/CreditEvent.png)
 
 Click the Save and Done button. This page will now be able to take credit card payments through TSYS.
 
@@ -182,7 +182,7 @@ Identify and navigate to the target contact record.
 
 ## Backend Contribution
 
-![](/Screenshots/BackendContribution.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/BackendContribution.png)
 
 On the contact record select the Contributions tab, then click the "Submit Credit Card Contribution" button.
 
@@ -190,7 +190,7 @@ Make sure that the name you used to set up the process (Credit Card in our examp
 
 ## Backend Event Registration
 
-![](/Screenshots/BackendEvent.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/BackendEvent.png)
 
 On the contact record select the Contributions tab, then click the "Submit Credit Card Contribution" button.
 
@@ -203,7 +203,7 @@ Enter the remaining required fields and click "Save" or "Save and New" to execut
 # Cancelling a recurring contribution
 Recurring contributions are held on the contact record under the Contributions tab, in a sub-tab called Recurring Contributions.
 
-![](/Screenshots/CancelRecurring.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/CancelRecurring.png)
 
 Click the Cancel link on the right side of the recurring contribution to cancel future transactions.
 
@@ -213,24 +213,24 @@ Refunds to credit cards must be initiated through your TSYS interface. At this t
 ## Refund the contribution through the Merchant Portal
 
 Log in to your TSYS Merchant Portal
-![](/Screenshots/MerchantPortalLogin.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/MerchantPortalLogin.png)
 
 From the Dashboard, you can use the Quick Transaction Search to locate the transaction you need to refund.
-![](/Screenshots/MerchantPortalDashboard.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/MerchantPortalDashboard.png)
 
 Use the Virtual Terminal to find the Manual Refund link. Enter the transaction information and click "Submit Refund"
-![](/Screenshots/MerchantPortalRefund.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/MerchantPortalRefund.png)
 
 ## Record the refund in CiviCRM
 After you refund a transaction, you will need to record that refund in CiviCRM. Use the Civi menu Search > Find Contributions to enter contribution details that will allow you to click View on the contribution record. It should look something like this:
 
-![](/Screenshots/RefundContribution.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/RefundContribution.png)
 
 Click the Edit button on the bottom of the record
 
 Change Contribution Status to Refunded, and make any other necessary edits and click Save
 
-![](/Screenshots/Refunded.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/Refunded.png)
 
 # Troubleshooting
 
@@ -238,7 +238,7 @@ Change Contribution Status to Refunded, and make any other necessary edits and c
 
 This is likely due to a problem with the scheduled job for TSYS in CiviCRM. Try running the job manually and then re-enabling it from the Scheduled Job's page. Get here from the Civi menu Administer > System Settings > Scheduled Jobs
 
-![](/Screenshots/ScheduledJobs.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ScheduledJobs.png)
 
 Find the job labeled "TSYS Payments Recurring Contributions (Daily)" and check the information there about the last time it was run and whether or not it is enabled.
 
@@ -247,13 +247,13 @@ Find the job labeled "TSYS Payments Recurring Contributions (Daily)" and check t
 Use the "more" link to select "Execute Now"
 This should run any scheduled payments, including any that have been queued up since the last run.
 
-![](/Screenshots/RunScheduledJob.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/RunScheduledJob.png)
 
 ### Enable the TSYS job
 If the job runs successfully when executed manually, click the "edit" link. 
 Check the "Is this Scheduled Job active?" box if it is not checked.
 
-![](/Screenshots/ActivateScheduledJob.png)
+![](/home/josh/repositories/TSYS-CiviCRM-support/Screenshots/ActivateScheduledJob.png)
 
 ## Official Documentation Links
 The full suite of official documentation sets for CiviCRM can be found https://docs.civicrm.org
